@@ -25,6 +25,7 @@ target 'DemoApp' do
 
   post_install do |installer|
     react_native_post_install(installer)
+    # remember to remove these lines if not APFS case sensitive
     system('cd Pods/Headers/Public; ln -s Protobuf protobuf')
     system('cd Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework/ios-arm64_arm64e_armv7_armv7s; ln -sfh OpenSSL.framework openssl.framework')
     system('cd Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework/ios-arm64_i386_x86_64-simulator; ln -sfh OpenSSL.framework openssl.framework')
